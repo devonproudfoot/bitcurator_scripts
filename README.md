@@ -1,4 +1,7 @@
 # bitcurator_scripts
 
-Run create_accessions.sh to automatically create folders for the media that is being transferred.
-  TO-DO - Move photograph of media, create logs
+#### Scripts
+create_accessions.sh - Enter the accession numer and unique identifier to automatically create folders for the media being transferred
+*TO-DO*
+- Move photograph of media
+- create logs
