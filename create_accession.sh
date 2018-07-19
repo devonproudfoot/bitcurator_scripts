@@ -17,3 +17,5 @@ fi
 mkdir /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata
 
 zenity --info --title="Folder Created" text="The folders has been created for $accession/$unique_id"
+
+# rsync to move over the photograph
