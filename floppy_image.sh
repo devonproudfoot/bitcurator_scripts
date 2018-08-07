@@ -23,4 +23,9 @@ zenity --info --title="Folder Created" text="The folders has been created for $a
 
 image_date=$(date +"%Y-%m-%d-%T")
 
-sudo dd if=/dev/sdb of=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/$unique_id.img
+image_file=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/$unique_id.img
+
+sudo dd if=/dev/sdb of=$image_file
+
+### MUST HAVE FICLAM.SH from SLEUTHKIT [https://github.com/sleuthkit/sleuthkit/blob/develop/tools/fiwalk/plugins/ficlam.sh]
+sudo fiwalk -c /home/bcadmin/Desktop/Forensics\ and\ Reporting/clamconfig.txt -X/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata/ $image_file
