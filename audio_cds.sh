@@ -33,17 +33,12 @@ cd /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id
 bchunk -v -w $unique_id.bin $unique_id.cue $unique_id
 
 # Creating metadata file
-# NOT LOOPING THROUGH THE DIRECTORY
 
-$image_date >> $metadata_file
-
-metadata_file="$unique_id.txt"
-for filename in "/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/"
-do
-  if [[ -f "$filename"]]; then
-    md5sum $filename >> $metadata_file
-  fi
-done
+#photo=$here
 
 mkdir /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata
-mv $metadata_file /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata
+mv $photo /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata
+
+clamscan -i /home/bcadmin/Desktop/pending_transfers/$accession/$unique_id
+
+echo "Complete! Please close this window"
