@@ -23,9 +23,18 @@ zenity --info --title="Folder Created" text="The folders has been created for $a
 
 image_date=$(date +"%Y-%m-%d-%T")
 
-image_file=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/$unique_id.img
+find /usr | zenity --progress --pulsate --auto-close --auto-kill --text="Please wait while a disk image is created..."
+
+image_file=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/$unique_id
 
 sudo dd if=/dev/sdb of=$image_file
 
 ### MUST HAVE FICLAM.SH from SLEUTHKIT [https://github.com/sleuthkit/sleuthkit/blob/develop/tools/fiwalk/plugins/ficlam.sh]
-sudo fiwalk -c /home/bcadmin/Desktop/Forensics\ and\ Reporting/clamconfig.txt -X/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata/ $image_file
+
+find /usr | zenity --progress --pulsate --auto-close --auto-kill --text="Please wait while the disk image is scanned for viruses..."
+
+cd /usr/share/sleuthkit/tools/fiwalk/plugins/
+
+sudo ficlam -c clamconfig.txt -X/home/bcadmin/Desktop/pending_transfers/$accession/$unique_id/metadata/ $image_file
+
+zenity --info --title="Complete!" --text="Please make sure to check the virus scan xml document in the metadata folder before the accession is transfered!"
