@@ -13,6 +13,6 @@ unique_id=$(zenity --entry --title="Transfer Information" --text="What is the un
 
 output=$/media/sf_BC_share/transfers/$accession/$unique_id
 
-rsync -avz $source $output
+rsync -av $source $output
 
 zenity --info --title="Done!" text="Content has been copied!"
