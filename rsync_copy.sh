@@ -1,18 +1,22 @@
 #!/bin/sh
 
-cd ../..
+echo -n "What is the accession number? "
+read accession
 
-device=$(zenity --list --text="What type of media is being copied?" --radiolist --column "Check" --column "Device" TRUE "USB Drive")
+echo -n "What is the unique identifier? "
+read unique_id
 
-if [  $device = "USB Drive" ]; then
-  source=$/media/sdb1
-fi
+echo -n "Drag items into the Terminal that should be copied: "
+read input
 
-accession=$(zenity --entry --title="Transfer Information" --text="What is the accession number?")
-unique_id=$(zenity --entry --title="Transfer Information" --text="What is the unique identifier?")
+md5sum input
 
-output=$/media/sf_BC_share/transfers/$accession/$unique_id
+unique_folder=${accession]_${unique_id}
 
-rsync -av $source $output
+output=$/media/sf_BC_share/transfers/$accession/$unique_folder
+
+rsync -av --no-perms $source $output
+
+md5sum output
 
 zenity --info --title="Done!" text="Content has been copied!"
