@@ -19,4 +19,4 @@ rsync -av --no-perms $source $output
 
 md5sum output
 
-zenity --info --title="Done!" text="Content has been copied!"
+echo "Content has been copied!"
