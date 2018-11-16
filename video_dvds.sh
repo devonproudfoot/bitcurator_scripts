@@ -24,14 +24,7 @@ echo $iso_md5
 if ["$disk_md5" -eq "$iso_md5" ]; then
 	echo -n "Image is valid!"
 	echo -n "Creating MP4 file, please wait"
-	HandBrakeCLI -i /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso -o /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.mkv
+	HandBrakeCLI -i /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso -o /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.mp4
 else
 	echo - m "ERROR: Image is NOT valid!"
 fi
-
-
-
-
-
-
-
