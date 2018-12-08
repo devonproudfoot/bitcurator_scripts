@@ -13,13 +13,11 @@ read unique_id
 unique_folder=${accession}_${unique_id}
 
 if [ -d "/home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder" ]; then
-  zenity --info --title="Error" text="Folder already exists!"
+  echo "Error! Folder already exists!"
   exit
 else
   mkdir /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder
 fi
-
-image_file=/home/
 
 dd if=/dev/sdb of=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.img
 
