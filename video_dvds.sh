@@ -12,7 +12,8 @@ unique_folder=${accession}_${unique_id}
 
 disk_md5=$(md5sum /dev/sr1 | cut -d" " -f1)
 
-ddrescue -b 2048 -v /dev/sr1 /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.log
+#dd if=/dev/sr0 of=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso
+ddrescue -b 2048 -v /dev/sr0 /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.log
 
 iso_md5=$(md5sum /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.iso | cut -d" " -f1)
 
