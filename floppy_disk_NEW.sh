@@ -21,6 +21,14 @@ fi
 
 image_file=/home/
 
-dd if=/dev/sdb of=$/home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.img
+dd if=/dev/sdb of=/home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.img
 
-echo "Image has been complete.  Please extract the 'img' disk image with the tool"
+floppy_md5=$(md5sum /dev/sdb | cut -d" " -f1)
+image_md5=$(md5sum /home/bcadmin/Desktop/pending_transfers/$accession/$unique_folder/$unique_folder.img | cut -d" " -f1)
+
+if [ "$floppy_md5" == "$image_md5" ]
+then
+  echo "Disk image is valid, go ahead and extract the contents."
+else
+  echo "WARNING, disk image is not valid please try again!"
+fi
