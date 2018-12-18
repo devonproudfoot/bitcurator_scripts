@@ -4,6 +4,8 @@ For use with [BitCurator](http://bitcurator.net/)
 
 by Devon Proudfoot : )
 
+This is a work in progress.  Sometimes I update these and sometimes not. Sometimes I write these scripts well before I actually use them on digital mateiral we recieve so use at your own discretion!  Thanks for checking this out!
+
 #### Scripts
 - audio_disks.sh - Will create a folder for the Audio CD, creating a disk image, relevant metadata, and wave files
 
