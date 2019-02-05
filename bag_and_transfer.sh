@@ -7,6 +7,6 @@ python /usr/local/bin/bagit.py /home/bcadmin/Desktop/pending_transfers/$accessio
 
 echo -n "Transfering to drive"
 
-rsync -avc /home/bcadmin/Desktop/pending_transfers/$accession /media/sf_backlog
+rsync -avc /home/bcadmin/Desktop/pending_transfers/$accession/media/sf_backlog
 
 echo -n "Transfer complete"
