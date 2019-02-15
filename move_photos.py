@@ -1,3 +1,4 @@
+ #!/usr/bin/python3
 import shutil, os, argparse
 
 def get_args():
