@@ -13,6 +13,6 @@ unique_folder=${accession]_${unique_id}
 
 output=$/media/sf_BC_share/transfers/$accession/$unique_folder
 
-rsync -avc --no-perms $source $output
+rsync -t -O --protect-args -vv --chmod=Fug+rw,o-rwx,Dug+rwx,o-rwx -r $source $output
 
 echo "Content has been copied!"
