@@ -17,3 +17,5 @@ mkdir /home/bcadmin/Desktop/pending_transfers
 mkdir /home/bcadmin/Desktop/photographs
 mkdir /home/bcadmin/Desktop/photographs/transferred
 mkdir /home/bcadmin/Desktop/bc_reports
+mkdir /home/bcadmin/Desktop/working
+mkdir /home/bcadmin/Desktop/working/AIPs
