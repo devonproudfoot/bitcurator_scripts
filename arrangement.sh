@@ -21,7 +21,7 @@ while true; do
     read -p "The text file has been opened, please copy the paths to the records to be included in the SIP.  Each folder or file should be be on a new line.  Hit enter when the file has been saved."
     while IFS='' read -r line || [[ -n "$line" ]]; do
         echo $line
-        rsync -t -O --protect-args -vv --chmod=Fug+rw,o-rwx,Dug+rwx,o-rwx -r "$line" /home/bcadmin/Desktop/working/$coll_ID--$SIP/objects
+        rsync -t -c --protect-args -vv --chmod=Fug+rw,o-rwx,Dug+rwx,o-rwx -r "$line" /home/bcadmin/Desktop/working/$coll_ID--$SIP/objects
     done < "/home/bcadmin/Desktop/working/$coll_ID--$SIP.txt"
 	rm /home/bcadmin/Desktop/working/$coll_ID--$SIP.txt
 	#bagit.py --md5 /home/bcadmin/Desktop/working/$coll_ID--$SIP
