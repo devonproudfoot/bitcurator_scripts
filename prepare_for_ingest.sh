@@ -16,7 +16,7 @@ for folder in $parent_directory/*
 do
 	echo $folder
 	bagit.py $folder
-	rsync -avc $folder $new_location
+	rsync -t -c --protect-args -vv --chmod=Fug+rw,o-rwx,Dug+rwx,o-rwx -r $folder $new_location
 	new_folder=$(basename $folder)
 	cd $new_location
 	zip -r $new_location/$new_folder.zip *
