@@ -5,4 +5,4 @@ read ISO
 
 mp4=${ISO/iso/mp4}
 
-HandBrakeCLI -i $ISO
+HandBrakeCLI -i $ISO -o $mp4
