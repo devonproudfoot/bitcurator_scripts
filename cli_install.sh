@@ -1,10 +1,7 @@
 #!/bin/sh
 
 echo -n "Installing pdfkit"
-sudo pip3 install pdfkit
-
-echo -n "Installing hashlib"
-sudo pip3 install hashlib
+pip3 install pdfkit
 
 echo -n "Installing pdf2html"
 sudo apt-get install wkhtmltopdf
@@ -18,10 +15,9 @@ sudo apt-get install handbrake-gtk
 echo -n "Installing msgconvert"
 sudo apt-get install libemail-outlook-message-perl
 
-
 mkdir /home/bcadmin/Desktop/pending_transfers
 mkdir /home/bcadmin/Desktop/photographs
-mkdir /home/bcadmin/Desktop/photographs/transferred
+mkdir /home/bcadmin/Desktop/pending_transfers/transferred
 mkdir /home/bcadmin/Desktop/bc_reports
-mkdir /home/bcadmin/Desktop/working
-mkdir /home/bcadmin/Desktop/working/AIPs
+# mkdir /home/bcadmin/Desktop/working
+# mkdir /home/bcadmin/Desktop/working/AIPs
